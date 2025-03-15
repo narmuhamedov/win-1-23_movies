@@ -40,10 +40,47 @@ $myrow = mysqli_fetch_array($result);
 
     <!-- Блок для комментариев -->
     <div class="comment-section">
+        <!-- TODO Форма для коментариев  -->
+        <form action="add_comment.php" method='POST'>
+            <input type="hidden" name='film_id' value="<?php echo $id; ?>">
+
+            <div class='mb-3'>
+                <label for="author" class='form-label'>Ваше имя:</label>
+                <input type="text" class='form-control' id='author' name='author' required>
+            </div>
+
+
+            <div class='mb-3'>
+                <label for="comment" class='form-label'>Комментарии:</label>
+                <textarea class='form-control' name="comment" id="comment" required></textarea>
+            </div>
+
+            <div class='mb-3'>
+                <label for="rating" class='form-label'>Оценка(1-5)</label>
+                <select class='form-control' name="rating" id="rating" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <button type="submit" class='btn btn-primary'>Добавить</button>
+        </form>
+
+
+
+
+
         <h5>Комментарии</h5>
-        <div class="comment">
-            <p> (2024-09-24): Офигенный фильм! Рекомендую! <strong>Оценка:</strong> 5</p>
-        </div>
+        <?php 
+        $comments = mysqli_query($link, "SELECT * FROM comments WHERE film_id=$id ORDER BY created_at DESC");
+        while($comment = mysqli_fetch_array($comments)){
+           echo "<div class='comment'>";
+           echo "<p><strong>{$comment['author']} ({$comment['created_at']}):</strong> {$comment['comment']} <strong>Оценка:</strong> {$comment['rating']}</p>";
+           echo "</div>";
+        }
+        ?>
     </div>
 </div>
 
