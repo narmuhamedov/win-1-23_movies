@@ -15,7 +15,9 @@
                     <a class="nav-link active" aria-current="page" href="/" style="color: yellow;">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: yellow;">Хэш теги</a>
+                    <a class="nav-link" href="list_movies_tags.php" style="color: yellow;">Список фильмов с тэгами</a>
+                    <a class="nav-link" href="add_movie.php" style="color: yellow;">Добавить фильм</a>
+                    <a class="nav-link" href="add_movie_hastags.php" style="color: yellow;">Добавть хэштег</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
