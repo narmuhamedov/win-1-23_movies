@@ -34,7 +34,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link enable" href="" style="color: yellow;">Регистрация</a>
+                    <a class="nav-link enable" href="users/main_page.php" style="color: yellow;">Регистрация</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link enable" href="" style="color: yellow;">Другие фильмы</a>
